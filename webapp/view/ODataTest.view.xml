@@ -1,0 +1,54 @@
+<mvc:View
+    controllerName="hp.project3.controller.ODataTest"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page title="OData Service Test">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Button 
+                    text="Test OData Connection" 
+                    press="onTestConnection"
+                    type="Emphasized"
+                />
+                <Text 
+                    id="connectionStatus" 
+                    text="Click button to test connection"
+                    class="sapUiMediumMarginTop"
+                />
+                <Table
+                    id="customersTable"
+                    items="{/Customers}"
+                    visible="false"
+                    class="sapUiMediumMarginTop"
+                >
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Customers (First 5)" />
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="Customer ID" />
+                        </Column>
+                        <Column>
+                            <Text text="Company Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Country" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{CustomerID } {CompanyName}" />
+                                <Text text="{CompanyName}" />
+                                <Text text="{Country}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
