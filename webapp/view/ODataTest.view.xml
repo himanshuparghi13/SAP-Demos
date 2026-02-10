@@ -11,6 +11,12 @@
                     press="onTestConnection"
                     type="Emphasized"
                 />
+                <Button 
+                    text="OData" 
+                    press="onTestConnections"
+                    type="Default"
+                />
+                <Button text="Create Product" press="onCreateEntry"/>
                 <Text 
                     id="connectionStatus" 
                     text="Click button to test connection"
@@ -18,7 +24,7 @@
                 />
                 <Table
                     id="customersTable"
-                    items="{/Customers}"
+                    items="{/Products}"
                     visible="false"
                     class="sapUiMediumMarginTop"
                 >
@@ -29,21 +35,22 @@
                     </headerToolbar>
                     <columns>
                         <Column>
-                            <Text text="Customer ID" />
+                            <Text text="ProductId" />
                         </Column>
                         <Column>
-                            <Text text="Company Name" />
+                            <Text text="ProductName" />
                         </Column>
                         <Column>
-                            <Text text="Country" />
+                            <Text text="UnitPrice" />
                         </Column>
                     </columns>
                     <items>
                         <ColumnListItem>
                             <cells>
-                                <Text text="{CustomerID } {CompanyName}" />
-                                <Text text="{CompanyName}" />
-                                <Text text="{Country}" />
+                                <Text text="{= ${ProductID} + ' ' + ${ProductName}}" />
+                                <Text text="{ProductName}" />
+                                <Text text="{UnitPrice}" />
+                                
                             </cells>
                         </ColumnListItem>
                     </items>

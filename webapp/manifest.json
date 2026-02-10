@@ -66,13 +66,24 @@
       "": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {}
+        "settings": {
+          "useBatch": true,
+          "disableHeadRequestForToken": true
+        }
+      },
+      "Products":{
+        "type":"sap.ui.model.json.JSONModel",
+         "uri": "model/Products.json"
+      },
+      "data":{
+        "type":"sap.ui.model.json.JSONModel",
+         "uri": "model/data.json"
       }
     },
     "resources": {
       "css": [
         {
-          "uri": "css/style.css"
+          "uri": "../css/style.css"
         }
       ]
     },
@@ -120,6 +131,20 @@
           "target": [
             "TargetODataTest"
           ]
+        },
+        {
+          "name":"RouteTable",
+          "pattern": "table",
+          "target":[
+            "TargetTable"
+          ]
+        },
+        {
+          "name":"RouteNewTable",
+          "pattern": "newTable",
+          "target":[
+            "TargetNewTable"
+          ]
         }
       ],
       "targets": {
@@ -138,6 +163,14 @@
         "TargetODataTest": {
           "id": "ODataTest",
           "name": "ODataTest"
+        },
+        "TargetTable":{
+          "id": "Table",
+          "name": "Table"
+        },
+        "TargetNewTable":{
+          "id": "NewTable",
+          "name": "NewTable"
         }
       }
     },

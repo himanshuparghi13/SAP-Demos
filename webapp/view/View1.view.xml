@@ -623,6 +623,12 @@
                         class="sapUiSmallMarginTop"
                     >
                         <Button
+                            text="Test Table"
+                            type="Default"
+                            press="onSave2"
+                            class="sapUiTinyMargin"
+                        />
+                        <Button
                             text="Test OData"
                             type="Neutral"
                             press="onTestOData"

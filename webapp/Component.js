@@ -24,6 +24,10 @@ sap.ui.define([
             var oGlobalModel = new JSONModel({ entries: [] });
             this.setModel(oGlobalModel, "globalData");
 
+            //   var oProductsModel = new JSONModel();
+            // oProductsModel.loadData("model/Products.json");
+            // this.setModel(oProductsModel, "Products");
+
             // enable routing
             this.getRouter().initialize();
         }

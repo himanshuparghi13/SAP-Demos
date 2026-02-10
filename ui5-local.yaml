@@ -32,13 +32,13 @@ server:
         backend:
           - path: /V2
             url: https://services.odata.org
-    - name: sap-fe-mockserver
-      beforeMiddleware: csp
-      configuration:
-        mountPath: /
-        services:
-          - urlPath: /V2/Northwind/Northwind.svc
-            metadataPath: ./webapp/localService/mainService/metadata.xml
-            mockdataPath: ./webapp/localService/mainService/data
-            generateMockData: true
-        annotations: []
+    # - name: sap-fe-mockserver
+    #   beforeMiddleware: csp
+    #   configuration:
+    #     mountPath: /
+    #     services:
+    #       - urlPath: /V2/Northwind/Northwind.svc
+    #         metadataPath: ./webapp/localService/mainService/metadata.xml
+    #         mockdataPath: ./webapp/localService/mainService/data
+    #         generateMockData: true
+    #     annotations: []
