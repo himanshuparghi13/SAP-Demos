@@ -623,6 +623,12 @@
                         class="sapUiSmallMarginTop"
                     >
                         <Button
+                            text="Test Charts"
+                            type="Default"
+                            press="onShowCharts"
+                            class="sapUiTinyMargin"
+                        />
+                        <Button
                             text="Test Table"
                             type="Default"
                             press="onSave2"

@@ -34,6 +34,11 @@ sap.ui.define([
         onTestOData() {
             var oRouter = this.getOwnerComponent().getRouter();
             oRouter.navTo("RouteODataTest", {}, true);
+        },
+
+        onShowCharts(){
+            var oRouter = this.getOwnerComponent().getRouter();
+            oRouter.navTo("RouteCharts", {}, true);
         }
     });
 });

@@ -75,6 +75,18 @@
         "type":"sap.ui.model.json.JSONModel",
          "uri": "model/Products.json"
       },
+      "Population":{
+        "type":"sap.ui.model.json.JSONModel",
+         "uri": "model/Population.json"
+      },
+      "Populations":{
+        "type":"sap.ui.model.json.JSONModel",
+         "uri": "model/Populations.json"
+      },
+      "Languages":{
+        "type":"sap.ui.model.json.JSONModel",
+         "uri": "model/Languages.json"
+      },
       "data":{
         "type":"sap.ui.model.json.JSONModel",
          "uri": "model/data.json"
@@ -145,6 +157,13 @@
           "target":[
             "TargetNewTable"
           ]
+        },
+        {
+          "name":"RouteCharts",
+          "pattern": "charts",
+          "target":[
+            "TargetCharts"
+          ]
         }
       ],
       "targets": {
@@ -171,6 +190,10 @@
         "TargetNewTable":{
           "id": "NewTable",
           "name": "NewTable"
+        },
+        "TargetCharts":{
+          "id": "Charts",
+          "name": "Charts"
         }
       }
     },
