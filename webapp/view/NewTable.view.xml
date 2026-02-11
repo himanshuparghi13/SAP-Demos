@@ -175,14 +175,6 @@
             </infoToolbar>
 
             <columns>
-                <!-- <Column
-                    minScreenWidth="Phone"
-                    demandPopin="false"
-                    hAlign="Center"
-                    width="3%"
-                >
-                    <CheckBox enabled="true" />
-                </Column> -->
                 <Column
                     minScreenWidth="Phone"
                     demandPopin="false"
@@ -270,12 +262,7 @@
                     vAlign="Middle"
                     type="Active"
                 >
-                    <!-- <cells>
-                        <CheckBox
-                            enabled="true"
-                            width="10%"
-                        />
-                    </cells> -->
+
                     <cells>
                         <HBox
                             alignContent="Center"
@@ -293,29 +280,22 @@
                                 <ObjectIdentifier text="{data>fileType}" />
                             </VBox>
                         </HBox>
-                    </cells>
-                    <cells>
+                    
                         <ObjectIdentifier text="{data>id}" />
-                    </cells>
-                    <cells>
+                   
                         <Link text="{data>revision}" />
-                        <!-- <ObjectIdentifier text="{data>revision}" /> -->
-                    </cells>
-                    <cells>
+                    
                         <core:Icon
                             src="{
                             path: 'data>status',
                             formatter: 'formatter.statusText'
                             }"
                         />
-                    </cells>
-                    <cells>
+                  
                         <ObjectIdentifier text="{data>fileSize}" />
-                    </cells>
-                    <cells>
+                    
                         <ObjectIdentifier text="{data>fileSizeBytes}" />
-                    </cells>
-                    <cells>
+                   
                         <ObjectIdentifier
                             title="{
                             path: 'data>lastModified',
@@ -326,14 +306,11 @@
                             formatter:'formatter.otime'
                         }"
                         />
-                    </cells>
-                    <cells>
+                   
                         <ObjectIdentifier text="{data>modifiedBy}" />
-                    </cells>
-                    <cells>
+                  
                         <ObjectIdentifier text="{data>createdBy}" />
-                    </cells>
-                    <cells>
+                   
                         <ObjectIdentifier
                             title="{
                             path: 'data>createdOn',

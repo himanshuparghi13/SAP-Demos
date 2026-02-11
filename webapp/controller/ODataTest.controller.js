@@ -2,75 +2,43 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/odata/v2/ODataModel",
     "sap/m/MessageToast",
-    "sap/ui/model/json/JSONModel"
-], (Controller, ODataModel, MessageToast, JSONModel) => {
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
+], (Controller, ODataModel, MessageToast, JSONModel,Filter,FilterOperator) => {
     "use strict";
 
     return Controller.extend("hp.project3.controller.ODataTest", {
+      
+
         onInit() {
+            MessageToast.show("Products Loaded Successfully");
         },
 
-        // onCreateEntry() {
-        //     var oModel = this.getOwnerComponent().getModel();
-            
-        //     oModel.setUseBatch(false);
-            
-        //     var oNewProduct = {
-        //         ProductID: 99999,
-        //         ProductName: "New Product",
-        //         SupplierID: 1,
-        //         CategoryID: 1,
-        //         QuantityPerUnit: "10 boxes",
-        //         UnitPrice: "25.50",
-        //         UnitsInStock: 100,
-        //         UnitsOnOrder: 0,
-        //         ReorderLevel: 10,
-        //         Discontinued: false
-        //     };
+        onFilter(oEvent) {
+            var sValue = oEvent.getParameter("newValue");
+            var oTable = this.byId("productsTable");
+            var oBinding = oTable.getBinding("items");
 
-        //     oModel.create("/Products", oNewProduct, {
-        //         success: () => {
-        //             MessageToast.show("Product created successfully!");
-        //             this.onTestConnection(); // Refresh table
-        //         },
-        //         error: (oError) => {
-        //             var sMessage = oError.responseText || oError.message || "Unknown error";
-        //             MessageToast.show("Create failed: " + sMessage);
-        //             console.error("Create error:", oError);
-        //         }
-        //     });
-        // },
-
-        onTestConnection() {
-            var oStatusText = this.byId("connectionStatus");
-            var oTable = this.byId("customersTable");
-
-            oStatusText.setText("Testing connection...");
-
-            var oModel = this.getOwnerComponent().getModel()
-                || this.getView().getModel();;
-
-
-            if (!oModel) {
-                oStatusText.setText("❌ No OData model found in manifest.json");
+            if (!sValue) {
+                oBinding.filter([]);
                 return;
             }
 
-            oModel.read("/Products", {
-                urlParameters: {
-                    "$top": "10"
-                },
-                success: (data) => {
-                    oStatusText.setText("✅ OData service is working! Found " + data.results.length + " customers");
-                    this.getView().setModel(new JSONModel({Products:data.results}));
-                    oTable.setVisible(true);
-                },
+            var oFilter = new Filter(
+                "ProductName",
+                FilterOperator.Contains,
+                sValue
+            );
 
-                error: (error) => {
-                    oStatusText.setText("❌ OData service failed: " + (error.message || "Connection error"));
-                    oTable.setVisible(false);
-                }
-            });
+            oBinding.filter([oFilter]);
+        },
+
+        
+        onSave() {
+            MessageToast.show("Save Triggered");
         }
+
+        
     });
 });
