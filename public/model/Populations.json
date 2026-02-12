@@ -1,0 +1,40 @@
+{
+  "traffic": [
+
+    { "Year": "2018", "Source": "Direct", "Visits": 220 },
+    { "Year": "2019", "Source": "Direct", "Visits": 260 },
+    { "Year": "2020", "Source": "Direct", "Visits": 340 },
+    { "Year": "2021", "Source": "Direct", "Visits": 290 },
+    { "Year": "2022", "Source": "Direct", "Visits": 380 },
+    { "Year": "2023", "Source": "Direct", "Visits": 310 },
+
+    { "Year": "2018", "Source": "Search", "Visits": 300 },
+    { "Year": "2019", "Source": "Search", "Visits": 360 },
+    { "Year": "2020", "Source": "Search", "Visits": 420 },
+    { "Year": "2021", "Source": "Search", "Visits": 390 },
+    { "Year": "2022", "Source": "Search", "Visits": 460 },
+    { "Year": "2023", "Source": "Search", "Visits": 410 },
+
+    { "Year": "2018", "Source": "Social Media", "Visits": 180 },
+    { "Year": "2019", "Source": "Social Media", "Visits": 210 },
+    { "Year": "2020", "Source": "Social Media", "Visits": 280 },
+    { "Year": "2021", "Source": "Social Media", "Visits": 240 },
+    { "Year": "2022", "Source": "Social Media", "Visits": 320 },
+    { "Year": "2023", "Source": "Social Media", "Visits": 260 },
+
+    { "Year": "2018", "Source": "Referral", "Visits": 120 },
+    { "Year": "2019", "Source": "Referral", "Visits": 150 },
+    { "Year": "2020", "Source": "Referral", "Visits": 200 },
+    { "Year": "2021", "Source": "Referral", "Visits": 170 },
+    { "Year": "2022", "Source": "Referral", "Visits": 230 },
+    { "Year": "2023", "Source": "Referral", "Visits": 190 },
+
+    { "Year": "2018", "Source": "Ads", "Visits": 90 },
+    { "Year": "2019", "Source": "Ads", "Visits": 130 },
+    { "Year": "2020", "Source": "Ads", "Visits": 210 },
+    { "Year": "2021", "Source": "Ads", "Visits": 160 },
+    { "Year": "2022", "Source": "Ads", "Visits": 260 },
+    { "Year": "2023", "Source": "Ads", "Visits": 200 }
+
+  ]
+}

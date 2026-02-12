@@ -1,0 +1,76 @@
+<mvc:View
+    controllerName="hp.project3.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        showNavButton="true"
+        navButtonPress="onNavBack"
+        id="pageView3"
+        title="System Data Entries"
+    >
+        <content>
+            <Table
+                id="systemDataTable"
+                items="{globalData>/entries}"
+                class="sapUiResponsiveMargin"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="System Data Entries" />
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column>
+                        <Text text="Client" />
+                    </Column>
+                    <Column>
+                        <Text text="User" />
+                    </Column>
+                    <Column>
+                        <Text text="Language" />
+                    </Column>
+                    <Column>
+                        <Text text="Transaction" />
+                    </Column>
+                    <Column>
+                        <Text text="Product Version" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{globalData>usageData/client}" />
+                            <Text text="{globalData>usageData/user}" />
+                            <Text text="{globalData>usageData/language}" />
+                            <Text
+                                text="{globalData>repositoryData/transaction}"
+                            />
+                            <Text
+                                text="{globalData>systemData/productVersion}"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <HBox
+                justifyContent="End"
+                class="sapUiSmallMarginTop"
+            >
+                <Button
+                    text="save"
+                    type="Accept"
+                    press="onJsonPrint"
+                    class="sapUiTinyMargin"
+                />
+                <Button
+                    text="clear"
+                    type="Negative"
+                    press="onClear"
+                    class="sapUiTinyMargin"
+                />
+            </HBox>
+        </content>
+    </Page>
+</mvc:View>

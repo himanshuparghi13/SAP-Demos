@@ -1,0 +1,164 @@
+<mvc:View
+    controllerName="hp.project3.controller.Table"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page title="hello">
+        <Table
+            class="sapUxAPObjectPageSubSectionAlignContent"
+            id="table_product"
+            headerText="Products"
+            autoPopinMode="false"
+            width="auto"
+            inset="false"
+            enableBusyIndicator="false"
+            busyIndicatorDelay="500"
+            growing="false"
+            growingScrollToLoad="false"
+            growingThreshold=""
+            items="{Products>/}"
+            core:require="{Formatter:'hp/project3/formatter/Formatter'}"
+        >
+            <columns>
+                <Column visible="true">
+                    <Text
+                        wrapping="false"
+                        text="Product ID"
+                        textAlign="Right"
+                    />
+                </Column>
+                <Column
+                    demandPopin="false"
+                    minScreenWidth="Phone"
+                >
+                    <!-- <layoutData>
+                            <layout:BlockLayoutCellData lSize="15%" mSize="18%" sSize="auto"></layout:BlockLayoutCellData>
+                                                </layoutData> -->
+                    <Text
+                        wrapping="false"
+                        text="Product"
+                    />
+                </Column>
+                <Column
+                    width="18rem"
+                    demandPopin="true"
+                    minScreenWidth="Desktop"
+                >
+                    <Text
+                        wrapping="false"
+                        text="Description"
+                    />
+                </Column>
+                <Column
+                    demandPopin="false"
+                    minScreenWidth="Phone"
+                >
+                    <!-- <layoutData>
+                                                    <layout:BlockLayoutCellData lSize="15%" mSize="auto" sSize="auto"></layout:BlockLayoutCellData>
+                                                </layoutData> -->
+                    <Text
+                        wrapping="false"
+                        text="Supplier"
+                    />
+                </Column>
+                <!-- <Column demandPopin="true" width="auto" minScreenWidth="Desktop">
+                                                <Text wrapping="true" maxLines="3" text="Quantity Per Unit"></Text>
+                                            </Column> -->
+                <Column
+                    demandPopin="true"
+                    hAlign="Center"
+                    minScreenWidth="Desktop"
+                    width="auto"
+                >
+                    <Text
+                        wrapping="false"
+                        text="Stock"
+                    />
+                </Column>
+                <Column
+                    demandPopin="false"
+                    minScreenWidth="Phone"
+                    width="auto"
+                >
+                    <Text
+                        wrapping="false"
+                        text="Price"
+                    />
+                </Column>
+                <Column
+                    demandPopin="true"
+                    styleClass="sapUiNoMargin"
+                    importance="Low"
+                    minScreenWidth="Tablet"
+                    width="5rem"
+                    hAlign="Center"
+                >
+                    <Text
+                        wrapping="false"
+                        text="Availability"
+                        tooltip="Availability"
+                    />
+                </Column>
+                <!-- <Column class="sapUiTinyMargin" minScreenWidth="Phone" width="auto">
+                                                <Text wrapping="false" text=""></Text>
+                                            </Column> -->
+            </columns>
+            <items>
+                <ColumnListItem
+                    type="Navigation"
+                    press=".overViewPage"
+                >
+                    <cells>
+                        <ObjectIdentifier
+                            title="{Products>ProductID}"
+                            visible="true"
+                        />
+                        <ObjectIdentifier
+                            text="{Products>ProductName}({Products>Category/CategoryName})"
+                        />
+                        <Text
+                            text="{Products>Category/Description}"
+                            wrapping="true"
+                            maxLines="3"
+                        />
+                        <Text
+                            text="{Products>Supplier/CompanyName}({Products>Supplier/City})"
+                            wrapping="true"
+                            maxLines="3"
+                        />
+                        <!-- <ObjectStatus reactiveAreaMode="Overlay" class="sapMObjectStatusLongText" icon="sap-icon://product" text="{QuantityPerUnit}" state="Success"/> -->
+                        <ObjectNumber
+                            number="{path:'Products>UnitsInStock',type:'sap.ui.model.type.Integer'}"
+                        />
+                        <ObjectNumber
+                            number="{parts:[{path:'Products>UnitPrice'}],type:'sap.ui.model.type.Currency',formatter:'Formatter.currency'}"
+                        />
+
+                        <ObjectStatus
+                            class="sapMObjectStatusLarge"
+                            text=""
+                            icon="{path:'Products>Discontinued',formatter:'Formatter.pContinued_'}"
+                            state="{path:'Products>Discontinued',formatter:'Formatter.pContinued_state'}"
+                        />
+                        <!-- <Button class="sapUiTinyMargin" icon="sap-icon://detail-more" press=".detailMore"></Button> -->
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <footer>
+           <Bar>
+    <contentRight>
+        <Button
+            text="OK"
+            type="Accept"
+            press="onSave"
+            class="sapUiTinyMargin"/>
+    </contentRight>
+</Bar>
+
+        </footer>
+        
+    </Page>
+</mvc:View>
