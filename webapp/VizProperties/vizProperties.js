@@ -40,7 +40,6 @@ sap.ui.define([], function () {
     //       size: 6,
     //     },
 
-    //     /* Show data values */
     //     dataLabel: {
     //       visible: false,
     //       formatString: "0.0",
@@ -50,26 +49,18 @@ sap.ui.define([], function () {
     //       },
     //     },
 
-    //     /* Colors */
     //     colorPalette: ["#5bbae7", "#b6da58", "#f9c463", "#f78a8a", "#d48ce1"],
 
-    //     /* Line drawing style */
     //     drawingEffect: "glossy",
     //   },
-
 
     //   valueAxis: {
     //     title: {
     //       visible: true,
     //       text: "Revenue",
     //     },
-
-    //     label: {
-    //       formatString: "ShortFloat",
-    //     },
     //   },
 
-    //   /* ---------------- CATEGORY AXIS (X) ---------------- */
     //   categoryAxis: {
     //     title: {
     //       visible: true,
@@ -81,13 +72,11 @@ sap.ui.define([], function () {
     //     },
     //   },
 
-    //   /* ---------------- TOOLTIP ---------------- */
     //   tooltip: {
     //     visible: true,
     //     formatString: "0.00",
     //   },
 
-    //   /* ---------------- INTERACTION ---------------- */
     //   interaction: {
     //     hover: {
     //       opacity: 1,
@@ -98,7 +87,6 @@ sap.ui.define([], function () {
     //     },
     //   },
 
-    //   /* ---------------- GENERAL ---------------- */
     //   general: {
     //     background: {
     //       color: "transparent",
@@ -111,222 +99,199 @@ sap.ui.define([], function () {
     //   },
     // },
 
-    areaChart: {
-      /* ---------------- TITLE ---------------- */
-      title: {
-        visible: true,
-        text: "Website Traffic Trend",
-        alignment: "center",
-        style: {
-          fontSize: "16px",
-          fontWeight: "bold",
-          color: "#333",
-        },
-      },
+    // areaChart: {
+    //   title: {
+    //     visible: true,
+    //     text: "Website Traffic Trend",
+    //     alignment: "center",
+    //     style: {
+    //       fontSize: "16px",
+    //       fontWeight: "bold",
+    //       color: "#333",
+    //     },
+    //   },
 
-      /* ---------------- LEGEND ---------------- */
-      legend: {
-        visible: true,
-        title: {
-          visible: false,
-        },
-        label: {
-          style: {
-            fontSize: "12px",
-            color: "#333",
-          },
-        },
-      },
+    //   legend: {
+    //     visible: true,
+    //     title: {
+    //       visible: false,
+    //     },
+    //     label: {
+    //       style: {
+    //         fontSize: "12px",
+    //         color: "#333",
+    //       },
+    //     },
+    //   },
 
-      legendGroup: {
-        layout: {
-          position: "right", // top / bottom / left / right
-        },
-      },
+    //   legendGroup: {
+    //     layout: {
+    //       position: "bottom",
+    //     },
+    //   },
 
-      /* ---------------- PLOT AREA ---------------- */
-      plotArea: {
-        /* Show values on area */
-        dataLabel: {
-          visible: false,
-          formatString: "0.0",
-          style: {
-            fontSize: "11px",
-            color: "#333",
-          },
-        },
+    //   plotArea: {
+    //     dataLabel: {
+    //       visible: false,
+    //       formatString: "0.0",
+    //       style: {
+    //         fontSize: "11px",
+    //         color: "#333",
+    //       },
+    //     },
 
-        /* Area transparency */
-        transparency: 0.2,
+    //     transparency: 0.2,
 
-        /* Line thickness */
-        lineSize: 2,
+    //     lineSize: 2,
 
-        /* Colors */
-        colorPalette: ["#5bbae7", "#b6da58", "#f9c463", "#f78a8a", "#d48ce1"],
+    //     colorPalette: ["#5bbae7", "#b6da58", "#f9c463", "#f78a8a", "#d48ce1"],
 
-        /* Marker (points on line) */
-        marker: {
-          visible: true,
-          size: 5,
-        },
+    //     marker: {
+    //       visible: true,
+    //       size: 5,
+    //     },
 
-        /* Drawing style */
-        drawingEffect: "glossy",
-      },
+    //     drawingEffect: "glossy",
+    //   },
 
-      /* ---------------- VALUE AXIS (Y) ---------------- */
-      valueAxis: {
-        title: {
-          visible: true,
-          text: "Visits",
-        },
+    //   valueAxis: {
+    //     title: {
+    //       visible: true,
+    //       text: "Visits",
+    //     },
 
-        label: {
-          formatString: "ShortFloat",
-        },
-      },
+       
+    //   },
 
-      /* ---------------- CATEGORY AXIS (X) ---------------- */
-      categoryAxis: {
-        title: {
-          visible: true,
-          text: "Year",
-        },
+    //   categoryAxis: {
+    //     title: {
+    //       visible: true,
+    //       text: "Year",
+    //     },
 
-        label: {
-          rotation: "auto",
-        },
-      },
+    //     label: {
+    //       rotation: "auto",
+    //     },
+    //   },
 
-      /* ---------------- TOOLTIP ---------------- */
-      tooltip: {
-        visible: true,
-        formatString: "0.00",
-      },
+    //   tooltip: {
+    //     visible: true,
+    //     formatString: "0.00",
+    //   },
 
-      /* ---------------- INTERACTION ---------------- */
-      interaction: {
-        hover: {
-          opacity: 1,
-        },
+    //   interaction: {
+    //     hover: {
+    //       opacity: 1,
+    //     },
 
-        selectability: {
-          mode: "EXCLUSIVE",
-        },
-      },
+    //     selectability: {
+    //       mode: "EXCLUSIVE",
+    //     },
+    //   },
 
-      /* ---------------- GENERAL ---------------- */
-      general: {
-        background: {
-          color: "transparent",
-          visible: true,
-        },
+    //   general: {
+    //     background: {
+    //       color: "transparent",
+    //       visible: true,
+    //     },
 
-        layout: {
-          padding: 20,
-        },
-      },
-    },
+    //     layout: {
+    //       padding: 20,
+    //     },
+    //   },
+    // },
 
-    pieChart: {
-      /* ---------------- TITLE ---------------- */
-      title: {
-        visible: true,
-        text: "Traffic Source Distribution",
-        alignment: "center",
-        style: {
-          fontSize: "16px",
-          fontWeight: "bold",
-          color: "#333",
-        },
-      },
+    // pieChart: {
+    //   title: {
+    //     visible: true,
+    //     text: "Traffic Source Distribution",
+    //     alignment: "center",
+    //     style: {
+    //       fontSize: "16px",
+    //       fontWeight: "bold",
+    //       color: "#333",
+    //     },
+    //   },
 
-      /* ---------------- LEGEND ---------------- */
-      legend: {
-        visible: true,
-        title: {
-          visible: false,
-        },
-        label: {
-          style: {
-            fontSize: "12px",
-            color: "#333",
-          },
-        },
-      },
+    //   legend: {
+    //     visible: true,
+    //     title: {
+    //       visible: false,
+    //     },
+    //     label: {
+    //       style: {
+    //         fontSize: "12px",
+    //         color: "#333",
+    //       },
+    //     },
+    //   },
 
-      legendGroup: {
-        layout: {
-          position: "right", // top / bottom / left / right
-        },
-      },
+    //   legendGroup: {
+    //     layout: {
+    //       position: "bottom",
+    //     },
+    //   },
 
-      /* ---------------- PLOT AREA ---------------- */
-      plotArea: {
-        /* Pie size */
-        radius: 0.8,
+    //   plotArea: {
+    //     /* Pie size */
+    //     radius: 0.8,
 
-        /* Data Labels */
-        dataLabel: {
-          visible: true,
-          type: "percentage", // value / percentage / color / colorAndPercentage
-          formatString: "0.0%",
-          hideWhenOverlap: true,
-          style: {
-            fontSize: "12px",
-            color: "#333",
-          },
-        },
+    //     /* Data Labels */
+    //     dataLabel: {
+    //       visible: true,
+    //       type: "percentage",
+    //       formatString: "0.0%",
+    //       hideWhenOverlap: true,
+    //       style: {
+    //         fontSize: "12px",
+    //         color: "#333",
+    //       },
+    //     },
 
-        /* Slice Colors */
-        colorPalette: ["#5bbae7", "#b6da58", "#f9c463", "#f78a8a", "#d48ce1"],
+    //     /* Slice Colors */
+    //     colorPalette: ["#5bbae7", "#b6da58", "#f9c463", "#f78a8a", "#d48ce1"],
 
-        /* Drawing style */
-        drawingEffect: "glossy", // normal / glossy
-      },
+    //     /* Drawing style */
+    //     drawingEffect: "glossy", // normal / glossy
+    //   },
 
-      /* ---------------- TOOLTIP ---------------- */
-      tooltip: {
-        visible: true,
-        formatString: "0.00",
-        bodyMeasureValue: {
-          type: "valueAndPercentage",
-        },
-      },
+    //   tooltip: {
+    //     visible: true,
+    //     formatString: "0.00",
+    //     bodyMeasureValue: {
+    //       type: "valueAndPercentage",
+    //     },
+    //   },
 
-      /* ---------------- INTERACTION ---------------- */
-      interaction: {
-        selectability: {
-          mode: "EXCLUSIVE", // select one slice
-        },
+    //   interaction: {
+    //     selectability: {
+    //       mode: "EXCLUSIVE",
+    //     },
 
-        hover: {
-          opacity: 1,
-        },
-      },
+    //     hover: {
+    //       opacity: 1,
+    //     },
+    //   },
 
-      /* ---------------- GENERAL ---------------- */
-      general: {
-        background: {
-          color: "transparent",
-          visible: true,
-        },
+    //   general: {
+    //     background: {
+    //       color: "transparent",
+    //       visible: true,
+    //     },
 
-        layout: {
-          padding: 20,
-        },
-      },
-    },
+    //     layout: {
+    //       padding: 20,
+    //     },
+    //   },
+    // },
 
-    scatterChart: {
-      title: {
-        text: "ScatterChart",
-      },
-    },
+    // scatterChart: {
+    //   title: {
+    //     text: "ScatterChart",
+    //   },
+    // },
 
     // columnChart: {
-      
     //   title: {
     //     visible: true,
     //     text: "Sales Performance",
@@ -338,26 +303,25 @@ sap.ui.define([], function () {
     //     },
     //   },
 
-    // //   legend: {
-    // //     visible: true,
-    // //     title: {
-    // //       visible: true,
-    // //     },
-    // //     label: {
-    // //       style: {
-    // //         fontSize: "12px",
-    // //         color: "#333",
-    // //       },
-    // //     },
-    // //   },
+    //   legend: {
+    //     visible: true,
+    //     title: {
+    //       visible: true,
+    //     },
+    //     label: {
+    //       style: {
+    //         fontSize: "12px",
+    //         color: "#333",
+    //       },
+    //     },
+    //   },
 
-    // //   legendGroup: {
-    // //     layout: {
-    // //       position: "bottom", 
-    // //     },
-    // //   },
+    //   legendGroup: {
+    //     layout: {
+    //       position: "bottom",
+    //     },
+    //   },
 
-   
     //   plotArea: {
     //     dataLabel: {
     //       visible: true,
@@ -368,16 +332,13 @@ sap.ui.define([], function () {
     //       },
     //     },
 
-    //     /* Column width (spacing control) */
     //     gap: {
-    //       inner: 0.3, // space between bars
+    //       inner: 0.3,
     //       outer: 0.1,
     //     },
 
-    //     /* Colors */
     //     colorPalette: ["#5bbae7", "#b6da58", "#f9c463", "#f78a8a", "#d48ce1"],
 
-    //     /* Column border */
     //     dataPoint: {
     //       stroke: {
     //         visible: true,
@@ -385,7 +346,6 @@ sap.ui.define([], function () {
     //       },
     //     },
 
-    //     /* Drawing style */
     //     drawingEffect: "glossy",
     //   },
 
@@ -433,107 +393,101 @@ sap.ui.define([], function () {
     //     },
     //   },
     // },
-    donutChart: {
-      /* ---------------- TITLE ---------------- */
-      title: {
-        visible: true,
-        text: "Sales Distribution",
-        alignment: "center",
-        style: {
-          fontSize: "16px",
-          fontWeight: "bold",
-          color: "#333",
-        },
-      },
+    // donutChart: {
+    //   title: {
+    //     visible: true,
+    //     text: "Sales Distribution",
+    //     alignment: "center",
+    //     style: {
+    //       fontSize: "16px",
+    //       fontWeight: "bold",
+    //       color: "#333",
+    //     },
+    //   },
 
-      /* ---------------- LEGEND ---------------- */
-      legend: {
-        visible: true,
-        title: {
-          visible: false,
-        },
-        label: {
-          style: {
-            fontSize: "12px",
-            color: "#333",
-          },
-        },
-      },
+    //   legend: {
+    //     visible: true,
+    //     title: {
+    //       visible: false,
+    //     },
+    //     label: {
+    //       style: {
+    //         fontSize: "12px",
+    //         color: "#333",
+    //       },
+    //     },
+    //   },
 
-      legendGroup: {
-        layout: {
-          position: "right", // top / bottom / left / right
-        },
-      },
+    //   legendGroup: {
+    //     layout: {
+    //       position: "right",
+    //     },
+    //   },
 
-      /* ---------------- PLOT AREA ---------------- */
-      plotArea: {
-        /* Donut thickness */
-        innerRadiusRatio: 0.6,
+    //   plotArea: {
+    //     /* Donut thickness */
+    //     innerRadiusRatio: 0.6,
 
-        /* Radius size */
-        radius: 0.8,
+    //     /* Radius size */
+    //     radius: 0.8,
 
-        /* Data Labels */
-        dataLabel: {
-          visible: true,
-          type: "percentage", // value / percentage / colorAndPercentage
-          formatString: "0.0%",
-          hideWhenOverlap: true,
-          style: {
-            fontSize: "12px",
-            color: "#333",
-          },
-        },
+    //     /* Data Labels */
+    //     dataLabel: {
+    //       visible: true,
+    //       type: "percentage",
+    //       formatString: "0.0%",
+    //       hideWhenOverlap: true,
+    //       style: {
+    //         fontSize: "12px",
+    //         color: "#333",
+    //       },
+    //     },
 
-        /* Slice Colors */
-        colorPalette: ["#5bbae7", "#b6da58", "#f9c463", "#f78a8a", "#d48ce1"],
+    //     /* Slice Colors */
+    //     colorPalette: ["#5bbae7", "#b6da58", "#f9c463", "#f78a8a", "#d48ce1"],
 
-        /* Highlight effect */
-        highlight: {
-          centerValue: {
-            visible: true,
-          },
-          centerName: {
-            visible: true,
-          },
-        },
+    //     /* Highlight effect */
+    //     highlight: {
+    //       centerValue: {
+    //         visible: true,
+    //       },
+    //       centerName: {
+    //         visible: true,
+    //       },
+    //     },
 
-        /* Drawing style */
-        drawingEffect: "glossy", // normal / glossy
-      },
+    //     /* Drawing style */
+    //     drawingEffect: "glossy", // normal / glossy
+    //   },
 
-      /* ---------------- TOOLTIP ---------------- */
-      tooltip: {
-        visible: true,
-        formatString: "0.00",
-        bodyMeasureValue: {
-          type: "valueAndPercentage",
-        },
-      },
+    //   tooltip: {
+    //     visible: true,
+    //     formatString: "0.00",
+    //     bodyMeasureValue: {
+    //       type: "valueAndPercentage",
+    //     },
+    //   },
 
-      /* ---------------- INTERACTION ---------------- */
-      interaction: {
-        selectability: {
-          mode: "EXCLUSIVE", // SINGLE slice selection
-        },
+    //   interaction: {
+    //     selectability: {
+    //       mode: "EXCLUSIVE", // SINGLE slice selection
+    //     },
 
-        hover: {
-          opacity: 1,
-        },
-      },
+    //     hover: {
+    //       opacity: 1,
+    //     },
+    //   },
 
-      /* ---------------- GENERAL ---------------- */
-      general: {
-        background: {
-          color: "transparent",
-          visible: true,
-        },
+    //   general: {
+    //     background: {
+    //       color: "transparent",
+    //       visible: true,
+    //     },
 
-        layout: {
-          padding: 20,
-        },
-      },
-    },
+    //     layout: {
+    //       padding: 20,
+    //     },
+    //   },
+    // },
   };
 });
