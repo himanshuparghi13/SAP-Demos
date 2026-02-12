@@ -1,0 +1,147 @@
+<mvc:View
+    controllerName="hp.project3.controller.ODataTest"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+     <Page title="Products Data">
+
+     <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Country-Specific Profit Margin" press="press"
+		frameType="OneByHalf" subheader="Subtitle">
+		<TileContent>
+			<ImageContent src="test-resources/sap/m/demokit/sample/GenericTileAsLaunchTile/images/SAPLogoLargeTile_28px_height.png" />
+		</TileContent>
+	</GenericTile>
+
+        <Table
+            id="productsTable"
+            items="{/Products}"
+            mode="MultiSelect"
+            alternateRowColors="true"
+            enableBusyIndicator="false"
+        >
+
+            <headerToolbar>
+                <OverflowToolbar>
+                    <Title text="Products" />
+                    <ToolbarSpacer />
+
+                    <SearchField
+                        width="20%"
+                        liveChange="onFilter"
+                        placeholder="Search Product"
+                    />
+
+                    <Button
+                        text="Refresh"
+                        press="onRefresh"
+                        icon="sap-icon://refresh"
+                    />
+
+                    <Button
+                        text="Create"
+                        type="Emphasized"
+                        press="onCreateEntry"
+                        icon="sap-icon://add"
+                    />
+                </OverflowToolbar>
+            </headerToolbar>
+
+            <infoToolbar>
+                <Toolbar>
+                    <Label text="Northwind OData Products Data" />
+                </Toolbar>
+            </infoToolbar>
+
+            <columns>
+
+                <Column>
+                    <Text text="Product ID" />
+                </Column>
+
+                <Column>
+                    <Text text="Product Name" />
+                </Column>
+
+                <Column>
+                    <Text text="Supplier ID" />
+                </Column>
+
+                <Column>
+                    <Text text="Category ID" />
+                </Column>
+
+                <Column>
+                    <Text text="Price" />
+                </Column>
+
+                <Column>
+                    <Text text="Stock" />
+                </Column>
+
+                <Column>
+                    <Text text="On Order" />
+                </Column>
+
+                <Column>
+                    <Text text="Discontinued" />
+                </Column>
+
+            </columns>
+
+            <items>
+                <ColumnListItem type="Active">
+
+                    <cells>
+
+                        <ObjectIdentifier
+                            title="{ProductID}"
+                        />
+
+                        <ObjectIdentifier
+                            title="{ProductName}"
+                        />
+
+                        <Text text="{SupplierID}" />
+
+                        <Text text="{CategoryID}" />
+
+                        <ObjectNumber
+                            number="{UnitPrice}"
+                            unit="USD"
+                        />
+
+                        <ObjectNumber
+                            number="{UnitsInStock}"
+                        />
+
+                        <ObjectNumber
+                            number="{UnitsOnOrder}"
+                        />
+
+                        <Text text="{Discontinued}" />
+                    </cells>
+
+                </ColumnListItem>
+            </items>
+
+        </Table>
+
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button
+                        text="Save"
+                        type="Accept"
+                        press="onSave"
+                    />
+                    <Button
+                        text="test List"
+                        type="Accept"
+                        press="makeList"
+                    />
+                </contentRight>
+            </Bar>
+        </footer>
+
+    </Page>
+</mvc:View>

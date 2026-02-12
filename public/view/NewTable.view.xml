@@ -1,0 +1,342 @@
+<mvc:View
+    controllerName="hp.project3.controller.NewTable"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:p="sap.m.plugins"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    core:require="{formatter: 'hp/project3/model/formatter'}"
+>
+    <!-- <Table
+        id="NewTable"
+        items="{
+			path: 'Products>/',
+			sorter: {
+				path: 'Name'
+			}
+		}"
+    >
+        <headerToolbar>
+            <Toolbar>
+                <content>
+                    <Title text="Products Data:" />
+                    <ToolbarSpacer />
+                    <ComboBox
+                        id="idPopinLayout"
+                        change="onPopinLayoutChanged"
+                        placeholder="Popin layout options"
+                    >
+                        <items>
+                            <core:Item
+                                text="Block"
+                                key="Block"
+                            />
+                            <core:Item
+                                text="Grid Large"
+                                key="GridLarge"
+                            />
+                            <core:Item
+                                text="Grid Small"
+                                key="GridSmall"
+                            />
+                        </items>
+                    </ComboBox>
+                    <Label text="Sticky options:" />
+                    <CheckBox
+                        text="ColumnHeaders"
+                        select="onSelect"
+                    />
+                    <CheckBox
+                        text="HeaderToolbar"
+                        select="onSelect"
+                    />
+                    <CheckBox
+                        text="InfoToolbar"
+                        select="onSelect"
+                    />
+                    <ToggleButton
+                        id="toggleInfoToolbar"
+                        text="Hide/Show InfoToolbar"
+                        press="onToggleInfoToolbar"
+                    />
+                </content>
+            </Toolbar>
+        </headerToolbar>
+
+        <infoToolbar>
+            <Toolbar>
+                <Label text="Wide range of available products" />
+            </Toolbar>
+        </infoToolbar>
+
+        <columns>
+            <Column
+                minScreenWidth="Desktop"
+                demandPopin="true"
+            >
+                <Text text="Product" />
+                <dependents>
+                    <p:ColumnAIAction press="onAIActionPress" />
+                </dependents>
+            </Column>
+            <Column
+                minScreenWidth="Desktop"
+                demandPopin="true"
+            >
+                <Text text="Suppliers" />
+            </Column>
+            <Column
+                minScreenWidth="Desktop"
+                demandPopin="true"
+                hAlign="End"
+            >
+                <Text text="Dimensions" />
+            </Column>
+            <Column
+                minScreenWidth="Desktop"
+                demandPopin="true"
+                hAlign="End"
+            >
+                <Text text="Weight" />
+            </Column>
+            <Column
+                hAlign="End"
+                minScreenWidth="Desktop"
+                demandPopin="true"
+            >
+                <Text text="Price" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem vAlign="Middle">
+                <cells>
+                    <ObjectIdentifier
+                        title="{Products>ProductID}"
+                        text="{ProductsProductID}"
+                    />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table> -->
+    <Page title="ALL ABOUT TABLE">
+        <Table
+            alternateRowColors="true"
+            fixedLayout="false"
+            headerText="THIS IS HEADER OF MY TABLE"
+            footerText="THIS TABLE ENDED"
+            noDataText="THERE IS NO DATA"
+            multiSelectMode="SelectAll"
+            mode="MultiSelect"
+            id="NewwTable"
+            items="{
+			path: 'data>/',
+			sorter: {
+				path: 'Name'
+			}
+		}"
+        >
+            <headerToolbar>
+                <OverflowToolbar>
+                    <content>
+                        <Title text="Documents" />
+                        <ToolbarSpacer />
+                        <SearchField
+                            width="20%"
+                            liveChange=".onFilter"
+                            placeholder="enter File Name"
+                        />
+                        <Label text="Upload" />
+                        <Button
+                            text="Download"
+                            type="Default"
+                            enabled="false"
+                            id="btnnn"
+                        />
+                        <SearchField change="onToggleInfoToolbar" />
+                        <CheckBox
+                            text="ColumnHeaders"
+                            select="onSelect"
+                        />
+                        <CheckBox
+                            text="HeaderToolbar"
+                            select="onSelect"
+                        />
+                        <CheckBox
+                            text="InfoToolbar"
+                            select="onSelect"
+                        />
+                    </content>
+                </OverflowToolbar>
+            </headerToolbar>
+            <infoToolbar>
+                <OverflowToolbar>
+                    <Label text="Wide range of available Files" />
+                </OverflowToolbar>
+            </infoToolbar>
+
+            <columns>
+                <Column
+                    minScreenWidth="Phone"
+                    demandPopin="false"
+                    hAlign="Center"
+                    vAlign="Middle"
+                    width="17%"
+                >
+                    <Text text="File Name" />
+                </Column>
+                <Column
+                    minScreenWidth="Phone"
+                    demandPopin="false"
+                    hAlign="Center"
+                    vAlign="Middle"
+                >
+                    <Text text="ID" />
+                </Column>
+                <Column
+                    minScreenWidth="Phone"
+                    demandPopin="false"
+                    hAlign="Center"
+                    vAlign="Middle"
+                >
+                    <Text text="Revision" />
+                </Column>
+                <Column
+                    minScreenWidth="Phone"
+                    demandPopin="false"
+                    hAlign="Center"
+                    vAlign="Middle"
+                >
+                    <Text text="Status" />
+                </Column>
+                <Column
+                    minScreenWidth="Tablet"
+                    demandPopin="true"
+                    hAlign="Center"
+                    vAlign="Middle"
+                >
+                    <Text text="File Size" />
+                </Column>
+                <Column
+                    minScreenWidth="Desktop"
+                    demandPopin="true"
+                    hAlign="Center"
+                    vAlign="Middle"
+                >
+                    <Text text="File Size Bytes" />
+                </Column>
+                <Column
+                    minScreenWidth="Phone"
+                    demandPopin="false"
+                    hAlign="Center"
+                    vAlign="Middle"
+                >
+                    <Text text="Last Modified" />
+                </Column>
+                <Column
+                    minScreenWidth="Phone"
+                    demandPopin="false"
+                    hAlign="Center"
+                    vAlign="Middle"
+                >
+                    <Text text="Modified By" />
+                </Column>
+                <Column
+                    minScreenWidth="Phone"
+                    demandPopin="false"
+                    hAlign="Center"
+                    vAlign="Middle"
+                >
+                    <Text text="Created By" />
+                </Column>
+                <Column
+                    minScreenWidth="Phone"
+                    demandPopin="false"
+                    hAlign="Center"
+                    vAlign="Middle"
+                >
+                    <Text text="Created On" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem
+                    vAlign="Middle"
+                    type="Active"
+                >
+
+                    <cells>
+                        <HBox
+                            alignContent="Center"
+                            alignItems="Center"
+                        >
+                            <Image
+                                class="sapUiSmallMargin"
+                                src="https://ui5.sap.com/test-resources/sap/m/images/invoice_manager.png"
+                            />
+                            <VBox
+                                alignContent="Center"
+                                alignItems="Start"
+                            >
+                                <Link text="{data>fileName}" />
+                                <ObjectIdentifier text="{data>fileType}" />
+                            </VBox>
+                        </HBox>
+                    
+                        <ObjectIdentifier text="{data>id}" />
+                   
+                        <Link text="{data>revision}" />
+                    
+                        <core:Icon
+                            src="{
+                            path: 'data>status',
+                            formatter: 'formatter.statusText'
+                            }"
+                        />
+                  
+                        <ObjectIdentifier text="{data>fileSize}" />
+                    
+                        <ObjectIdentifier text="{data>fileSizeBytes}" />
+                   
+                        <ObjectIdentifier
+                            title="{
+                            path: 'data>lastModified',
+                            formatter:'formatter.odate'
+                        }"
+                            text="{
+                            path: 'data>lastModified',
+                            formatter:'formatter.otime'
+                        }"
+                        />
+                   
+                        <ObjectIdentifier text="{data>modifiedBy}" />
+                  
+                        <ObjectIdentifier text="{data>createdBy}" />
+                   
+                        <ObjectIdentifier
+                            title="{
+                            path: 'data>createdOn',
+                            formatter:'formatter.odate'
+                        }"
+                            text="{
+                            path: 'data>createdOn',
+                            formatter:'formatter.otime'
+                        }"
+                        />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button
+                        text="OK"
+                        type="Accept"
+                        press="onSave"
+                        class="sapUiTinyMargin"
+                    />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

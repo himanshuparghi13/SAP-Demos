@@ -1,0 +1,17 @@
+{
+  "Languages": [
+    { "lang": "Bengali", "per": 8.0 },
+    { "lang": "Marathi", "per": 7.0 },
+    { "lang": "Telugu", "per": 6.7 },
+    { "lang": "Tamil", "per": 5.7 },
+    { "lang": "Gujarati", "per": 4.6 },
+    { "lang": "Urdu", "per": 4.2 },
+    { "lang": "Kannada", "per": 3.6 },
+    { "lang": "Odia", "per": 3.1 },
+    { "lang": "Malayalam", "per": 2.9 },
+    { "lang": "Punjabi", "per": 2.7 },
+    { "lang": "Assamese", "per": 1.3 },
+    { "lang": "Maithili", "per": 1.1 },
+    { "lang": "Others", "per": 5.5 }
+  ]
+}
