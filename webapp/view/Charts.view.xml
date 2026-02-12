@@ -1,6 +1,6 @@
 <mvc:View
     controllerName="hp.project3.controller.Charts"
-    xmlns:f="sap.ui.layout.form"
+    xmlns:fo="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
@@ -9,271 +9,266 @@
     xmlns:layout="sap.ui.layout"
     xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
     xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:card="sap.f.cards"
+    xmlns:f="sap.f"
 >
-    <Page>
+    <Page title="All Charts">
         <layout:Grid
-
             hSpacing="2"
             vSpacing="2"
             class="sapUiSmallMargin"
         >
-        
-                <layout:FixFlex minFlexSize="250">
-                    <layout:layoutData>
-                        <layout:GridData
-                            span="L6 M12 S12"
-                        />
-                    </layout:layoutData>
-                    <layout:flexContent>
-                        <viz:VizFrame
-                            vizType="column"
-                            width="100%"
-                            height="100%"
-                        >
-                            <viz:dataset>
-                                <viz.data:FlattenedDataset
-                                    data="{Population>/populations}"
-                                >
-                                    <viz.data:dimensions>
-                                        <viz.data:DimensionDefinition
-                                            name="Country"
-                                            value="{Population>Country}"
-                                        />
-                                    </viz.data:dimensions>
-                                    <viz.data:measures>
-                                        <viz.data:MeasureDefinition
-                                            name="Population"
-                                            value="{Population>Population}"
-                                        />
-                                    </viz.data:measures>
-                                </viz.data:FlattenedDataset>
-                            </viz:dataset>
+            <layout:FixFlex minFlexSize="250">
+                <layout:layoutData>
+                    <layout:GridData span="L8 M9 S12" />
+                </layout:layoutData>
+                <layout:flexContent>
+                    <viz:VizFrame
+                        id="columnChart"
+                        vizType="column"
+                        width="100%"
+                        height="100%"
+                    >
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset
+                                data="{Population>/populations}"
+                            >
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition
+                                        name="Country"
+                                        value="{Population>Country}"
+                                    />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition
+                                        name="Population"
+                                        value="{Population>Population}"
+                                    />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
 
-                            <viz:feeds>
-                                <viz.feeds:FeedItem
-                                    uid="categoryAxis"
-                                    type="Dimension"
-                                    values="Country"
-                                />
-                                <viz.feeds:FeedItem
-                                    uid="valueAxis"
-                                    type="Measure"
-                                    values="Population"
-                                />
-                            </viz:feeds>
-                            <viz:dependents>
-                                <viz:Popover />
-                            </viz:dependents>
-                        </viz:VizFrame>
-                    </layout:flexContent>
-                </layout:FixFlex>
-                <layout:FixFlex minFlexSize="250">
-                    <layout:layoutData>
-                        <layout:GridData
-                            span="L6 M12 S12"
+                        <viz:feeds>
+                            <viz.feeds:FeedItem
+                                uid="categoryAxis"
+                                type="Dimension"
+                                values="Country"
+                            />
+                            <viz.feeds:FeedItem
+                                uid="valueAxis"
+                                type="Measure"
+                                values="Population"
+                            />
+                        </viz:feeds>
+                        <viz:dependents>
+                            <viz:Popover />
+                        </viz:dependents>
+                    </viz:VizFrame>
+                </layout:flexContent>
+            </layout:FixFlex>
+            <layout:FixFlex minFlexSize="250">
+                <layout:layoutData>
+                    <layout:GridData span="L4 M3 S12" />
+                </layout:layoutData>
+                <layout:flexContent>
+                    <viz:VizFrame
+                        id="pieChart"
+                        vizType='pie'
+                        width="100%"
+                        height="100%"
+                    >
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset
+                                data="{Languages>/Languages}"
+                            >
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition
+                                        name="lang"
+                                        value="{Languages>lang}"
+                                    />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition
+                                        name="per"
+                                        value="{Languages>per}"
+                                    />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
 
-                        />
-                    </layout:layoutData>
-                    <layout:flexContent>
-                        <viz:VizFrame
+                        <viz:feeds>
+                            <viz.feeds:FeedItem
+                                uid="size"
+                                type="Measure"
+                                values="per"
+                            />
+                            <viz.feeds:FeedItem
+                                uid="color"
+                                type="Dimension"
+                                values="lang"
+                            />
+                        </viz:feeds>
+                        <viz:dependents>
+                            <viz:Popover />
+                        </viz:dependents>
+                    </viz:VizFrame>
+                </layout:flexContent>
+            </layout:FixFlex>
+            <layout:FixFlex minFlexSize="250">
+                <layout:layoutData>
+                    <layout:GridData span="L4 M3 S12" />
+                </layout:layoutData>
+                <layout:flexContent>
+                    <viz:VizFrame
+                        id="donutChart"
+                        vizType='donut'
+                        width="100%"
+                        height="100%"
+                    >
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset
+                                data="{Languages>/Languages}"
+                            >
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition
+                                        name="lang"
+                                        value="{Languages>lang}"
+                                    />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition
+                                        name="per"
+                                        value="{Languages>per}"
+                                    />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+
+                        <viz:feeds>
+                            <viz.feeds:FeedItem
+                                uid="size"
+                                type="Measure"
+                                values="per"
+                            />
+                            <viz.feeds:FeedItem
+                                uid="color"
+                                type="Dimension"
+                                values="lang"
+                            />
+                        </viz:feeds>
+
+                        <viz:dependents>
+                            <viz:Popover />
+                        </viz:dependents>
+                    </viz:VizFrame>
+                </layout:flexContent>
+            </layout:FixFlex>
+            <layout:FixFlex minFlexSize="250">
+                <layout:layoutData>
+                    <layout:GridData span="L8 M9 S12" />
+                </layout:layoutData>
+                <layout:flexContent>
+                    <viz:VizFrame
                         renderComplete=".addP"
                         id="lineChart"
-                            vizType="line"
-                            width="100%"
-                            height="100%"
-                        >
-                            <viz:dataset>
-                                <viz.data:FlattenedDataset
-                                    data="{Population>/populations}"
-                                >
-                                    <viz.data:dimensions>
-                                        <viz.data:DimensionDefinition
-                                            name="Country"
-                                            value="{Population>Country}"
-                                        />
-                                    </viz.data:dimensions>
-                                    <viz.data:measures>
-                                        <viz.data:MeasureDefinition
-                                            name="Population"
-                                            value="{Population>Population}"
-                                        />
-                                    </viz.data:measures>
-                                </viz.data:FlattenedDataset>
-                            </viz:dataset>
+                        vizType="line"
+                        width="100%"
+                        height="100%"
+                    >
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset
+                                data="{Population>/populations}"
+                            >
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition
+                                        name="Country"
+                                        value="{Population>Country}"
+                                    />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition
+                                        name="Population"
+                                        value="{Population>Population}"
+                                    />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
 
-                            <viz:feeds>
-                                <viz.feeds:FeedItem
-                                    uid="categoryAxis"
-                                    type="Dimension"
-                                    values="Country"
-                                />
-                                <viz.feeds:FeedItem
-                                    uid="valueAxis"
-                                    type="Measure"
-                                    values="Population"
-                                />
-                            </viz:feeds>
-                            <viz:dependents>
-                                <viz:Popover />
-                            </viz:dependents>
-                        </viz:VizFrame>
-                    </layout:flexContent>
-                </layout:FixFlex>
-                <layout:FixFlex minFlexSize="250">
-                    <layout:layoutData>
-                        <layout:GridData span="L3 M6 S12" />
-                    </layout:layoutData>
-                    <layout:flexContent>
-                        <viz:VizFrame
-                        id="piechart"
-                            vizType='pie'
-                            width="100%"
-                            height="100%"
-                        >
-                            <viz:dataset>
-                                <viz.data:FlattenedDataset
-                                    data="{Languages>/Languages}"
-                                >
-                                    <viz.data:dimensions>
-                                        <viz.data:DimensionDefinition
-                                            name="lang"
-                                            value="{Languages>lang}"
-                                        />
-                                    </viz.data:dimensions>
-                                    <viz.data:measures>
-                                        <viz.data:MeasureDefinition
-                                            name="per"
-                                            value="{Languages>per}"
-                                        />
-                                    </viz.data:measures>
-                                </viz.data:FlattenedDataset>
-                            </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem
+                                uid="categoryAxis"
+                                type="Dimension"
+                                values="Country"
+                            />
+                            <viz.feeds:FeedItem
+                                uid="valueAxis"
+                                type="Measure"
+                                values="Population"
+                            />
+                        </viz:feeds>
+                        <viz:dependents>
+                            <viz:Popover />
+                        </viz:dependents>
+                    </viz:VizFrame>
+                </layout:flexContent>
+            </layout:FixFlex>
+            <layout:FixFlex minFlexSize="250">
+                <layout:layoutData>
+                    <layout:GridData span="L7 M7 S12" />
+                </layout:layoutData>
+                <layout:flexContent>
+                    <viz:VizFrame
+                        id="areaChart"
+                        vizType="area"
+                        width="100%"
+                        height="100%"
+                    >
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset
+                                data="{Populations>/traffic}"
+                            >
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition
+                                        name="Year"
+                                        value="{Populations>Year}"
+                                    />
+                                    <viz.data:DimensionDefinition
+                                        name="Source"
+                                        value="{Populations>Source}"
+                                    />
+                                </viz.data:dimensions>
 
-                            <viz:feeds>
-                                <viz.feeds:FeedItem
-                                    uid="size"
-                                    type="Measure"
-                                    values="per"
-                                />
-                                <viz.feeds:FeedItem
-                                    uid="color"
-                                    type="Dimension"
-                                    values="lang"
-                                />
-                            </viz:feeds>
-                            <viz:dependents>
-                                <viz:Popover />
-                            </viz:dependents>
-                        </viz:VizFrame>
-                    </layout:flexContent>
-                </layout:FixFlex>
-                <layout:FixFlex minFlexSize="250">
-                    <layout:layoutData>
-                        <layout:GridData span="L6 M6 S12" />
-                    </layout:layoutData>
-                    <layout:flexContent>
-                        <viz:VizFrame
-                            vizType="area"
-                            width="100%"
-                            height="100%"
-                        >
-                            <viz:dataset>
-                                <viz.data:FlattenedDataset
-                                    data="{Populations>/traffic}"
-                                >
-                                    <viz.data:dimensions>
-                                        <viz.data:DimensionDefinition
-                                            name="Year"
-                                            value="{Populations>Year}"
-                                        />
-                                        <viz.data:DimensionDefinition
-                                            name="Source"
-                                            value="{Populations>Source}"
-                                        />
-                                    </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition
+                                        name="Visits"
+                                        value="{Populations>Visits}"
+                                    />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
 
-                                    <viz.data:measures>
-                                        <viz.data:MeasureDefinition
-                                            name="Visits"
-                                            value="{Populations>Visits}"
-                                        />
-                                    </viz.data:measures>
-                                </viz.data:FlattenedDataset>
-                            </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem
+                                uid="valueAxis"
+                                type="Measure"
+                                values="Visits"
+                            />
 
-                            <viz:feeds>
-                                <viz.feeds:FeedItem
-                                    uid="valueAxis"
-                                    type="Measure"
-                                    values="Visits"
-                                />
+                            <viz.feeds:FeedItem
+                                uid="categoryAxis"
+                                type="Dimension"
+                                values="Year"
+                            />
 
-                                <viz.feeds:FeedItem
-                                    uid="categoryAxis"
-                                    type="Dimension"
-                                    values="Year" 
-                                />
-
-                                <viz.feeds:FeedItem
-                                    uid="color"
-                                    type="Dimension"
-                                    values="Source"
-                                />
-                            </viz:feeds>
-                        </viz:VizFrame>
-                    </layout:flexContent>
-                </layout:FixFlex>
-                 <layout:FixFlex minFlexSize="250">
-                    <layout:layoutData>
-                        <layout:GridData span="L3 M6 S12" />
-                    </layout:layoutData>
-                    <layout:flexContent>
-                        <viz:VizFrame
-                            vizType='donut'
-                            width="100%"
-                            height="100%"
-                        >
-                            <viz:dataset>
-                                <viz.data:FlattenedDataset
-                                    data="{Languages>/Languages}"
-                                >
-                                    <viz.data:dimensions>
-                                        <viz.data:DimensionDefinition
-                                            name="lang"
-                                            value="{Languages>lang}"
-                                        />
-                                    </viz.data:dimensions>
-                                    <viz.data:measures>
-                                        <viz.data:MeasureDefinition
-                                            name="per"
-                                            value="{Languages>per}"
-                                        />
-                                    </viz.data:measures>
-                                </viz.data:FlattenedDataset>
-                            </viz:dataset>
-
-                            <viz:feeds>
-                                <viz.feeds:FeedItem
-                                    uid="size"
-                                    type="Measure"
-                                    values="per"
-                                />
-                                <viz.feeds:FeedItem
-                                    uid="color"
-                                    type="Dimension"
-                                    values="lang"
-                                />
-                            </viz:feeds>
-                            
-                            <viz:dependents>
-                                <viz:Popover />
-                            </viz:dependents>
-
-                            
-                            
-                        </viz:VizFrame>
-                    </layout:flexContent>
-                </layout:FixFlex>
+                            <viz.feeds:FeedItem
+                                uid="color"
+                                type="Dimension"
+                                values="Source"
+                            />
+                        </viz:feeds>
+                    </viz:VizFrame>
+                </layout:flexContent>
+            </layout:FixFlex>
         </layout:Grid>
     </Page>
 </mvc:View>

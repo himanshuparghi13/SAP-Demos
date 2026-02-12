@@ -49,7 +49,10 @@
       "minUI5Version": "1.144.1",
       "libs": {
         "sap.m": {},
-        "sap.ui.core": {}
+        "sap.ui.core": {},
+        "sap.viz": {},
+        "sap.f": {},
+        "sap.ui.layout": {}
       }
     },
     "contentDensities": {
@@ -71,25 +74,25 @@
           "disableHeadRequestForToken": true
         }
       },
-      "Products":{
-        "type":"sap.ui.model.json.JSONModel",
-         "uri": "model/Products.json"
+      "Products": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/Products.json"
       },
-      "Population":{
-        "type":"sap.ui.model.json.JSONModel",
-         "uri": "model/Population.json"
+      "Population": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/Population.json"
       },
-      "Populations":{
-        "type":"sap.ui.model.json.JSONModel",
-         "uri": "model/Populations.json"
+      "Populations": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/Populations.json"
       },
-      "Languages":{
-        "type":"sap.ui.model.json.JSONModel",
-         "uri": "model/Languages.json"
+      "Languages": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/Languages.json"
       },
-      "data":{
-        "type":"sap.ui.model.json.JSONModel",
-         "uri": "model/data.json"
+      "data": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/data.json"
       }
     },
     "resources": {
@@ -110,60 +113,44 @@
         "path": "hp.project3.view",
         "async": true,
         "bypassed": {
-          "target": [
-            "notFound"
-          ]
+          "target": ["notFound"]
         }
       },
       "routes": [
         {
           "name": "RouteView1",
           "pattern": ":?query:",
-          "target": [
-            "TargetView1"
-          ]
+          "target": ["TargetView1"]
         },
         {
           "name": "RouteView2",
           "pattern": "RouteView2",
-          "target": [
-            "TargetView2"
-          ]
+          "target": ["TargetView2"]
         },
         {
           "name": "RouteView3",
           "pattern": "RouteView3",
-          "target": [
-            "TargetView3"
-          ]
+          "target": ["TargetView3"]
         },
         {
           "name": "RouteODataTest",
           "pattern": "odata-test",
-          "target": [
-            "TargetODataTest"
-          ]
+          "target": ["TargetODataTest"]
         },
         {
-          "name":"RouteTable",
+          "name": "RouteTable",
           "pattern": "table",
-          "target":[
-            "TargetTable"
-          ]
+          "target": ["TargetTable"]
         },
         {
-          "name":"RouteNewTable",
+          "name": "RouteNewTable",
           "pattern": "newTable",
-          "target":[
-            "TargetNewTable"
-          ]
+          "target": ["TargetNewTable"]
         },
         {
-          "name":"RouteCharts",
+          "name": "RouteCharts",
           "pattern": "charts",
-          "target":[
-            "TargetCharts"
-          ]
+          "target": ["TargetCharts"]
         }
       ],
       "targets": {
@@ -183,15 +170,15 @@
           "id": "ODataTest",
           "name": "ODataTest"
         },
-        "TargetTable":{
+        "TargetTable": {
           "id": "Table",
           "name": "Table"
         },
-        "TargetNewTable":{
+        "TargetNewTable": {
           "id": "NewTable",
           "name": "NewTable"
         },
-        "TargetCharts":{
+        "TargetCharts": {
           "id": "Charts",
           "name": "Charts"
         }

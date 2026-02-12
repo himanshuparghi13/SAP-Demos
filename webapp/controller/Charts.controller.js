@@ -2,51 +2,26 @@ sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
-    "sap/m/MessageToast",
-    "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator",
+    "hp/project3/VizProperties/vizProperties",
   ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller, JSONModel, MessageToast, Filter, FilterOperator) {
+  function (Controller, JSONModel, vizProperties) {
     "use strict";
     return Controller.extend("hp.project3.controller.Charts", {
-      onInit: function () {},
-      addP: function () {
+      onInit: function () {
+        const lineChart = this.byId("lineChart");
+        const columnChart = this.byId("columnChart");
+        const pieChart = this.byId("pieChart");
+        const areaChart = this.byId("areaChart");
+        const donutChart = this.byId("donutChart");
 
-        let VizFrame2 = this.byId("piechart");
-        const props = {
-          title: {
-            text: "hello akshit",
-          },
-          legend: {
-            isScrollable: true
-          },
-          general:{
-            background:{
-                border:{
-                    stroke:"#6c6c6c"
-                }
-            }
-          }
-        };
-
-        let VizFrame = this.byId("lineChart");
-        const props2= {
-            title:{
-                text:"himanshu"
-            },
-          valueAxis:{
-            color:"#d1dc0aff"
-          },
-          categoryAxis:{
-            color:"#d1dc0aff"
-          }
-        };
-
-        VizFrame2.setVizProperties(props);
-        VizFrame.setVizProperties(props2);
+        lineChart.setVizProperties(vizProperties.lineChart);
+        columnChart.setVizProperties(vizProperties.columnChart);
+        pieChart.setVizProperties(vizProperties.pieChart);
+        areaChart.setVizProperties(vizProperties.areaChart);
+        donutChart.setVizProperties(vizProperties.donutChart);
       },
     });
   },
